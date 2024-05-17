@@ -2,7 +2,7 @@ pipeline {
    
     agent any
   environment{
-     DOCKERHUB_CREDENTIALS=credentials('dockerhub-malikk611')
+     DOCKERHUB_CREDENTIALS=credentials('dockerhub_malikk611')
   }
     stages{
         stage('Build'){
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Docker build'){
             steps{
-                sh 'docker build -t malikkahmednawaz786/jenkins-integration:latest .'
+                sh 'docker build -t malikkahmednawaz611/jenkins-integration:latest .'
             }
         }
         stage('login'){
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('push'){
             steps{
-                sh 'docker push malikkahmednawaz786/jenkins-integration:latest'
+                sh 'docker push malikkahmednawaz611/jenkins-integration:latest'
             }
         }
         stage('deploy'){
